@@ -33,6 +33,7 @@ body {
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 10px white;
+  color: black;
 }
 .button-q.btnfixed {
   position: fixed;

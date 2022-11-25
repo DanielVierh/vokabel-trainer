@@ -57,7 +57,7 @@ eval("\n\n//# sourceURL=webpack://project-template/./src/js/script.js?");
   \***************************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://project-template/./src/js/storage.js?");
+eval("let vocable_Save_Object = {\r\n\r\n}\n\n//# sourceURL=webpack://project-template/./src/js/storage.js?");
 
 /***/ })
 
