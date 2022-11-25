@@ -27,7 +27,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_script_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/script.js */ \"./src/js/script.js\");\n/* harmony import */ var _js_script_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_script_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_home_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/home.js */ \"./src/js/home.js\");\n/* harmony import */ var _js_home_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_home_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scss/style.scss */ \"./src/scss/style.scss\");\n\n\n\n\n\n//# sourceURL=webpack://project-template/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/storage.js */ \"./src/js/storage.js\");\n/* harmony import */ var _js_storage_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_storage_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_script_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/script.js */ \"./src/js/script.js\");\n/* harmony import */ var _js_script_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_script_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _js_home_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/home.js */ \"./src/js/home.js\");\n/* harmony import */ var _js_home_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_home_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scss/style.scss */ \"./src/scss/style.scss\");\n\n\n\n\n\n\n//# sourceURL=webpack://project-template/./src/index.js?");
 
 /***/ }),
 
@@ -37,7 +37,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_
   \************************/
 /***/ (() => {
 
-eval("alert(\"Feffe\")\n\n//# sourceURL=webpack://project-template/./src/js/home.js?");
+eval("const languages = ['Englisch', 'Spanisch', 'Französisch'];\r\nconst langContainer = document.getElementById(\"langContainer\");\r\n\r\nwindow.onload = init();\r\n\r\nfunction init() {\r\n    renderLanguages();\r\n}\r\n\r\nfunction renderLanguages() {\r\n    for(let i = 0; i < languages.length; i++) {\r\n        let atag = document.createElement(\"a\");\r\n        atag.innerHTML = languages[i];\r\n        langContainer.appendChild(atag);\r\n    }\r\n}\n\n//# sourceURL=webpack://project-template/./src/js/home.js?");
 
 /***/ }),
 
@@ -48,6 +48,16 @@ eval("alert(\"Feffe\")\n\n//# sourceURL=webpack://project-template/./src/js/home
 /***/ (() => {
 
 eval("\n\n//# sourceURL=webpack://project-template/./src/js/script.js?");
+
+/***/ }),
+
+/***/ "./src/js/storage.js":
+/*!***************************!*\
+  !*** ./src/js/storage.js ***!
+  \***************************/
+/***/ (() => {
+
+eval("\n\n//# sourceURL=webpack://project-template/./src/js/storage.js?");
 
 /***/ })
 
