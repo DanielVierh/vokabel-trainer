@@ -1,0 +1,12 @@
+.footerNav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: rgb(16, 16, 63);
+    z-index: 11;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
