@@ -7,23 +7,18 @@
     bottom: 0;
     z-index: 10;
 
-    h1 {
-        font-size: 2.5em;
-        text-align: center;
-        color: black;
-    }
-
     .languageContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 150px;
 
         .languageBtn {
             text-decoration: none;
             color: black;
             font-size: 1.5em;
             height: 40px;
-            margin-top: 60px;
+            margin-top: 40px;
             font-weight: bold;
             background-color: rgb(185, 184, 184);
             width: 260px;
@@ -41,4 +36,34 @@
             }
         }
     }
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    color: black;
+    z-index: 1000;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+}
+
+.contentArea {
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.NewWords {
+    background-color: rgb(186, 205, 218);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
 }

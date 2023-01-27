@@ -11,15 +11,36 @@
 
 <body id="langMenu">
     <a class="goHomeButton" href="index.html">zurück</a>
+    <h1 id="lngLabel">Vokabeltrainer</h1>
     <section class="homepage">
-        <h1 id="lngLabel">Vokabeltrainer</h1>
+       
         <div class="button-q btnfixed" id="addVocable_1">➕</div>
         <div class="wrapper">
-            <div class="actionbutton">Vokabeltest</div>
             <div class="actionbutton">Karteikarten</div>
+            <div class="actionbutton">Drag n Drop Test</div>
+            <div class="actionbutton">Schreibtest</div>
             <div class="actionbutton">Vokabeln verwalten</div>
-            <div class="actionbutton">Drag n Drop</div>
         </div>
+    </section> 
+
+    <!-- Neue Wörter eingeben -->
+    <section  class="NewWords" id="new_Words_Area">
+        <div class="contentArea">
+            <h2>Neue Vokabel hinzufügen</h2>
+            <form>
+                <div class="inputWrapper">
+                    <label for="inp_word_own">Deutsches Wort</label>
+                    <input type="text" name="" id="inp_word_own">
+                </div>
+                <div class="inputWrapper">
+                    <label for="inp_word_foreign">Englisches Wort</label>
+                    <input type="text" name="" id="inp_word_foreign">
+                </div>
+                
+            </form>
+            <div id="btn_Save_new_Vocable" class="savebutton">Speichern</div>
+        </div>
+       
     </section>
 
 
