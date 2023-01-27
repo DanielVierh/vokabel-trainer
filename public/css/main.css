@@ -29,7 +29,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 8px;
   background-color: black;
   border-radius: 5px;
   box-shadow: 0 0 10px white, inset 0 0 10px white;
@@ -40,6 +40,48 @@ body {
   position: fixed;
   right: 20px;
   top: 90px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.actionbutton {
+  width: 180px;
+  height: 50px;
+  background-color: black;
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 0 5px black;
+  font-size: 1.4em;
+  padding: 8px;
+}
+
+.goHomeButton {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  background-color: rgba(0, 0, 255, 0.627);
+  color: white;
+  width: 70px;
+  height: 30px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  border-radius: 8px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
 }
 
 .homepage {
@@ -61,12 +103,12 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.homepage .languageContainer a {
+.homepage .languageContainer .languageBtn {
   text-decoration: none;
   color: black;
   font-size: 1.5em;
   height: 40px;
-  margin-top: 40px;
+  margin-top: 60px;
   font-weight: bold;
   background-color: rgb(185, 184, 184);
   width: 260px;
@@ -79,7 +121,7 @@ body {
   box-shadow: 0 0 20px black;
   transition: all 0.4s ease;
 }
-.homepage .languageContainer a:hover {
+.homepage .languageContainer .languageBtn:hover {
   box-shadow: 0 0 5px black;
 }
 
