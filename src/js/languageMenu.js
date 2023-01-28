@@ -1,6 +1,9 @@
 const lngLabel = document.getElementById("lngLabel");
 const langMenu = document.getElementById("langMenu");
-
+const new_Words_Area = document.getElementById("new_Words_Area")
+const menu_Area = document.getElementById("menu_Area")
+const addVocable_1 = document.getElementById("addVocable_1")
+const addVocable_2 = document.getElementById("addVocable_2")
 
 /**
  * #####################################################################################
@@ -47,3 +50,24 @@ function save_into_Storage() {
     console.log('SaveObj', voc_Saveobject);
 }
 
+
+
+// Add new Vocable
+
+if(addVocable_1) {
+    addVocable_1.addEventListener("click", ()=> {
+        showInputArea();
+    })
+}
+if(addVocable_2) {
+    addVocable_2.addEventListener("click", ()=> {
+        showInputArea();
+    })
+}
+
+
+
+function showInputArea() {
+    menu_Area.style.display = 'none;'
+    new_Words_Area.style.display = 'flex'
+}
