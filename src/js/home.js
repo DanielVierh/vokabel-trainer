@@ -130,7 +130,7 @@ function create_new_languge_pack() {
         }
     }
 
-    if (language_already_exists === false) {
+    if (language_already_exists === false && languageName !== null && languageName.length > 4) {
         voc_Saveobject.languagePacks.push(new LanguagePack(create_Id(), languageName))
         console.log('Save_Obj', voc_Saveobject);
         save_into_Storage();

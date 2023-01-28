@@ -10,6 +10,7 @@
     box-shadow: 0 0 10px white, inset 0 0 10px white;
     font-size: 1.3em;
     color: white;
+    cursor: pointer;
 
     &.btnfixed {
         position: fixed;
@@ -39,6 +40,7 @@
     box-shadow: 0 0 5px black;
     font-size: 1.4em;
     padding: 8px;
+    cursor: pointer;
 }
 
 
@@ -59,4 +61,5 @@
     font-weight: bold;
     letter-spacing: 2px;
     text-decoration: none;
+    cursor: pointer;
 }
