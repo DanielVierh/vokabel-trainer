@@ -7,15 +7,14 @@
     padding: 8px;
     background-color: black;
     border-radius: 5px;
-    box-shadow: 0 0 10px white, inset 0 0 10px white;
     font-size: 1.3em;
     color: white;
     cursor: pointer;
 
     &.btnfixed {
         position: fixed;
-        right: 20px;
-        top: 110px;
+        right: 5px;
+        top: 120px;
     }
 }
 
@@ -66,9 +65,8 @@
 
 .goHomeButton2 {
     position: fixed;
-    bottom: 190px;
-    left: 50%;
-    transform: translate(-50%, 0);
+    top: 5px;
+    right: 5px;
     background-color: rgba(0, 0, 255, 0.627);
     color: white;
     width: 70px;
