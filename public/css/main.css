@@ -87,6 +87,27 @@ body {
   cursor: pointer;
 }
 
+.goHomeButton2 {
+  position: fixed;
+  bottom: 190px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgba(0, 0, 255, 0.627);
+  color: white;
+  width: 70px;
+  height: 30px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  border-radius: 8px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .homepage {
   background-color: rgb(186, 205, 218);
   position: fixed;

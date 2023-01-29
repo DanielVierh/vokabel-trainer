@@ -4,6 +4,7 @@ const new_Words_Area = document.getElementById("new_Words_Area")
 const menu_Area = document.getElementById("menu_Area")
 const addVocable_1 = document.getElementById("addVocable_1")
 const addVocable_2 = document.getElementById("addVocable_2")
+const hide_Inputfields = document.getElementById("hide_Inputfields")
 
 /**
  * #####################################################################################
@@ -70,4 +71,16 @@ if(addVocable_2) {
 function showInputArea() {
     menu_Area.style.display = 'none;'
     new_Words_Area.style.display = 'flex'
+}
+
+if(hide_Inputfields) {
+    hide_Inputfields.addEventListener("click", ()=> {
+        hideInputArea();
+    })
+}
+
+function hideInputArea() {
+    new_Words_Area.style.display = 'none'
+    menu_Area.style.display = 'flex;'
+
 }
