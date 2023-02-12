@@ -91,7 +91,6 @@ function showWords() {
     menu_Area.style.display = 'none'
     myWordsArea.style.display = 'flex'
     const langId = voc_Saveobject.currentId;
-    console.log('Vor Schleife');
     for(let i = 0; i < voc_Saveobject.languagePacks.length; i++) {
         console.log('In Schleife 1');
         if(voc_Saveobject.languagePacks[i].id === langId) {
@@ -103,11 +102,13 @@ function showWords() {
                 let cell = document.createElement('div')
                 cell.classList.add("cell")
                 cell.innerHTML = wordbook[j].ownLangWord
+                cell.id = wordbook[j].wordId
 
                 let cellr = document.createElement('div')
                 cellr.classList.add("cell")
                 cellr.classList.add("cellr")
                 cellr.innerHTML = wordbook[j].foreignLangWord
+                cellr.id = wordbook[j].wordId
 
                 row.appendChild(cell)
                 row.appendChild(cellr)

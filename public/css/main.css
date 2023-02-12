@@ -226,17 +226,19 @@ h1 {
   background-color: black;
   justify-content: space-around;
   border: 1px solid teal;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 .wordsWrapper .cell {
   width: 50%;
+  min-height: 24px;
+  height: auto;
   text-align: center;
   font-size: 0.8em;
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 30px;
+  line-break: anywhere;
+  padding: 5px 0;
 }
 .wordsWrapper .cellr {
   border-left: 1px solid white;
