@@ -26,6 +26,7 @@
     letter-spacing: 1.5px;
     transition: all .5s ease;
     display: none;
+    cursor: pointer;
 
     &.active {
         display: flex;

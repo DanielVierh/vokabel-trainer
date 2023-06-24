@@ -40,7 +40,7 @@ function load_Data_from_Storage() {
         } catch (error) {
             console.warn('Loadingerror', error)
         }
-    }, 300);
+    }, 200);
 }
 
 
@@ -118,9 +118,6 @@ if(hide_myWords) {
 }
 
 function showMenu() {
-    // new_Words_Area.style.display = 'none'
-    // myWordsArea.style.display = 'none'
-    // menu_Area.style.display = 'flex'
     location.reload();
 }
 
@@ -146,8 +143,8 @@ if(btn_Save_new_Vocable) {
         if(word.length !== '' && translation !== '') {
             for(let i = 0; i < voc_Saveobject.languagePacks.length; i++) {
                 if(voc_Saveobject.languagePacks[i].id === langId) {
-                    voc_Saveobject.languagePacks[i].word_DB.push(new Vocable(word, translation, functions.create_Id, 0))
-                    save_into_Storage();
+                    voc_Saveobject.languagePacks[i].word_DB.push(new Vocable(word, translation, functions.create_Id(), 0))
+                    store.updateSaveObj(voc_Saveobject);
                     break;
                 }
             }

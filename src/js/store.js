@@ -29,4 +29,10 @@ const add_Language_to_SaveObj = (newlanguage)=> {
     save_Data_into_LocalStorage()
 }
 
-export { add_Language_to_SaveObj, save_Data_into_LocalStorage, load_Data_from_LocalStorage};
+const updateSaveObj = (svObj) => {
+    console.log('New Saveobj', svObj);
+    voc_Saveobject = svObj;
+    save_Data_into_LocalStorage();
+}
+
+export { add_Language_to_SaveObj, save_Data_into_LocalStorage, load_Data_from_LocalStorage, updateSaveObj};
