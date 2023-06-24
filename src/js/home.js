@@ -1,27 +1,12 @@
+import * as store from "./store.js";
+import * as functions from "./functions.js";
+
 const languages = [];
 const langContainer = document.getElementById("langContainer");
 const addLanguagePack_1 = document.getElementById("addLanguagePack_1")
 const addLanguagePack_2 = document.getElementById("addLanguagePack_2")
 const homepage = document.getElementById("homepage");
-
-
-
-
-/**
- * #####################################################################################
- * Save Object
- * Erweiterungen:
- *  voc_Saveobject.currentId = Representation of language package for better asignment
- */
-let voc_Saveobject = {
-    languagePacks: [],
-    settings: {
-        appeareance: 'light',
-        name_of_my_language: 'Deutsch'
-    },
-    showLanguage: ''
-}
-
+let voc_Saveobject
 
 /**
  * #####################################################################################
@@ -40,12 +25,14 @@ class LanguagePack {
     }
 }
 
-// #####################################################################################
-// Init
+
+
 window.onload = init();
+
 function init() {
     if(homepage) {
         load_Data_from_Storage();
+        console.log('Home.js');
     }
 }
 
@@ -53,8 +40,10 @@ function init() {
 // Load Data
 
 function load_Data_from_Storage() {
-    if (localStorage.getItem('vocableTrainer_save_Object') != null) {
-        voc_Saveobject = JSON.parse(localStorage.getItem('vocableTrainer_save_Object'));
+    voc_Saveobject = store.load_Data_from_LocalStorage()
+
+    setTimeout(() => {
+        console.log('voc_Saveobject', voc_Saveobject);
         try {
             for (let i = 0; i < voc_Saveobject.languagePacks.length; i++) {
                 languages.push(voc_Saveobject.languagePacks[i].language_Name)
@@ -63,14 +52,7 @@ function load_Data_from_Storage() {
         } catch (error) {
             console.warn('Loadingerror', error)
         }
-    } else {
-        console.log('Save Obj konnte nicht geladen werden');
-    }
-}
-
-function save_into_Storage() {
-    localStorage.setItem('vocableTrainer_save_Object', JSON.stringify(voc_Saveobject));
-    console.log('SaveObj', voc_Saveobject);
+    }, 300);
 }
 
 
@@ -84,24 +66,13 @@ function renderLanguages() {
         languageButton.onclick = function () {
             voc_Saveobject.showLanguage = this.innerHTML;
             voc_Saveobject.currentId = this.id;
-            save_into_Storage();
+            store.save_Data_into_LocalStorage();
             setTimeout(() => {
                 window.location = 'languageMenu.html'
             }, 200);
         };
         langContainer.appendChild(languageButton);
     }
-}
-
-// #####################################################################################
-function create_Id() {
-    const chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '#', 'A', 'B', 'C', 'D', '!', 'E', '$'];
-    let id = '';
-    for (let i = 1; i <= 15; i++) {
-        const randomNumb = parseInt(Math.random() * chars.length)
-        id = id + chars[randomNumb]
-    }
-    return id;
 }
 
 // #####################################################################################
@@ -131,9 +102,31 @@ function create_new_languge_pack() {
     }
 
     if (language_already_exists === false && languageName !== null && languageName.length > 4) {
-        voc_Saveobject.languagePacks.push(new LanguagePack(create_Id(), languageName))
-        console.log('Save_Obj', voc_Saveobject);
-        save_into_Storage();
+        const newLang = new LanguagePack(functions.create_Id, languageName)
+        console.log('newLang', newLang);
+        store.add_Language_to_SaveObj(newLang);
         window.location.reload();
     }
 }
+
+
+// Function to detect if you hold your device in portrait or landscape mode
+function portrait_or_landscape() {
+    // @media (orientation: landscape) {
+    //     body {
+    //       flex-direction: row;
+    //     }
+    //   }
+      
+    //   @media (orientation: portrait) {
+    //     body {
+    //       flex-direction: column;
+    //     }
+    //   }
+
+
+}
+
+screen.addEventListener("orientationchange", () => {
+    console.log(`The orientation of the screen is: ${screen.orientation}`);
+  });

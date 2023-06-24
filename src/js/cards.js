@@ -1,33 +1,18 @@
+import * as store from "./store.js";
+
 const card = document.querySelector('.card');
 const btnNext = document.getElementById("btnNext");
 const vocCards = document.getElementById("vocCards");
 const crdFront = document.getElementById("crdFront");
 const crdBack = document.getElementById("crdBack");
-
 let cardBackSideIsVisible = false;
-
 let allVocables = [];
-
-
-/**
- * #####################################################################################
- * Save Object
- * voc_Saveobject.currentId = Representation of language package for better asignment
- */
-let voc_Saveobject = {
-    languagePacks: [],
-    settings: {
-        appeareance: 'light',
-        name_of_my_language: 'Deutsch'
-    },
-    showLanguage: ''
-}
+let voc_Saveobject
 
 
 // #####################################################################################
 // Init
-window.onload = init();
-function init() {
+window.onload = () => {
     if(vocCards) {
         load_Data_from_Storage();
     }
@@ -37,23 +22,15 @@ function init() {
 // Load Data
 
 function load_Data_from_Storage() {
-    if (localStorage.getItem('vocableTrainer_save_Object') != null) {
-        voc_Saveobject = JSON.parse(localStorage.getItem('vocableTrainer_save_Object'));
-        console.log('SaveObj', voc_Saveobject);
+    voc_Saveobject = store.load_Data_from_LocalStorage()
+    setTimeout(() => {
         try {
             loadAllWords()
             pickRandomWord()
         } catch (error) {
             console.warn('Loadingerror', error)
         }
-    } else {
-        console.log('Save Obj konnte nicht geladen werden');
-    }
-}
-
-function save_into_Storage() {
-    localStorage.setItem('vocableTrainer_save_Object', JSON.stringify(voc_Saveobject));
-    console.log('SaveObj', voc_Saveobject);
+    }, 300);
 }
 
 // Karte drehen
@@ -82,6 +59,7 @@ function loadAllWords() {
     for(let i = 0; i < voc_Saveobject.languagePacks.length; i++) {
         if(voc_Saveobject.languagePacks[i].id === langId) {
             allVocables = voc_Saveobject.languagePacks[i].word_DB;
+            console.log('allVocables', allVocables);
             break;
         }
     }

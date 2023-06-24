@@ -1,3 +1,4 @@
+// import "./js/store.js"
 import "./js/script.js"
 import "./js/home.js"
 import "./js/languageMenu.js"

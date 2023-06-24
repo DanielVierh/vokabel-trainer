@@ -1,3 +1,6 @@
+import * as store from "./store.js";
+import * as functions from "./functions.js";
+
 const lngLabel = document.getElementById("lngLabel");
 const langMenu = document.getElementById("langMenu");
 const new_Words_Area = document.getElementById("new_Words_Area")
@@ -12,19 +15,7 @@ const myWordsArea = document.getElementById("myWordsArea");
 const showMyVocables = document.getElementById("showMyVocables");
 const wordsWrapper = document.getElementById("wordsWrapper")
 const hide_myWords = document.getElementById("hide_myWords")
-/**
- * #####################################################################################
- * Save Object
- * voc_Saveobject.currentId = Representation of language package for better asignment
- */
-let voc_Saveobject = {
-    languagePacks: [],
-    settings: {
-        appeareance: 'light',
-        name_of_my_language: 'Deutsch'
-    },
-    showLanguage: ''
-}
+let voc_Saveobject;
 
 
 // #####################################################################################
@@ -33,6 +24,7 @@ window.onload = init();
 function init() {
     if(langMenu) {
         load_Data_from_Storage();
+        console.log('LanguageMenu.js');
     }
 }
 
@@ -40,24 +32,16 @@ function init() {
 // Load Data
 
 function load_Data_from_Storage() {
-    if (localStorage.getItem('vocableTrainer_save_Object') != null) {
-        voc_Saveobject = JSON.parse(localStorage.getItem('vocableTrainer_save_Object'));
-        console.log('SaveObj', voc_Saveobject);
+    voc_Saveobject = store.load_Data_from_LocalStorage()
+    setTimeout(() => {
+        console.log('voc_Saveobject', voc_Saveobject);
         try {
             lngLabel.innerHTML = voc_Saveobject.showLanguage;
         } catch (error) {
             console.warn('Loadingerror', error)
         }
-    } else {
-        console.log('Save Obj konnte nicht geladen werden');
-    }
+    }, 300);
 }
-
-function save_into_Storage() {
-    localStorage.setItem('vocableTrainer_save_Object', JSON.stringify(voc_Saveobject));
-    console.log('SaveObj', voc_Saveobject);
-}
-
 
 
 // Add new Vocable
@@ -162,7 +146,7 @@ if(btn_Save_new_Vocable) {
         if(word.length !== '' && translation !== '') {
             for(let i = 0; i < voc_Saveobject.languagePacks.length; i++) {
                 if(voc_Saveobject.languagePacks[i].id === langId) {
-                    voc_Saveobject.languagePacks[i].word_DB.push(new Vocable(word, translation, create_Id(), 0))
+                    voc_Saveobject.languagePacks[i].word_DB.push(new Vocable(word, translation, functions.create_Id, 0))
                     save_into_Storage();
                     break;
                 }
@@ -176,12 +160,4 @@ if(btn_Save_new_Vocable) {
 }
 
 
-function create_Id() {
-    const chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '#', 'A', 'B', 'C', 'D', '!', 'E', '$'];
-    let id = '';
-    for (let i = 1; i <= 15; i++) {
-        const randomNumb = parseInt(Math.random() * chars.length)
-        id = id + chars[randomNumb]
-    }
-    return id;
-}
+
