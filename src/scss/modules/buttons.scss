@@ -82,3 +82,19 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+
+.btn-translate {
+    background-color: blue;
+    width: 100px;
+    position: absolute;
+    right: 5px;
+    top: 46%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    border-radius: 8px;
+}
