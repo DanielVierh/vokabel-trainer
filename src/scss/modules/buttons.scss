@@ -87,9 +87,8 @@
 .btn-translate {
     background-color: blue;
     width: 100px;
-    position: absolute;
-    right: 5px;
-    top: 46%;
+    align-self: center;
+    margin-top: 10px;
 
     display: flex;
     justify-content: center;
