@@ -179,7 +179,7 @@ async function fetchTranslation(sourceLang, targetLang, sourceText) {
 
 
 
-
+//* Translate Text 
 
 if (btn_translate) {
     btn_translate.addEventListener('click', () => {
