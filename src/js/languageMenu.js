@@ -16,6 +16,7 @@ const showMyVocables = document.getElementById("showMyVocables");
 const wordsWrapper = document.getElementById("wordsWrapper");
 const hide_myWords = document.getElementById("hide_myWords");
 const btn_translate = document.getElementById('btn_translate');
+const inp_lang_short_code = document.getElementById('inp_lang_short_code');
 let voc_Saveobject;
 
 
@@ -185,7 +186,10 @@ if (btn_translate) {
     btn_translate.addEventListener('click', () => {
         if (inp_word_own.value !== '') {
             const sourceLang = "de"; //TODO - Dynamisch machen
-            const targetLang = "en"; //TODO - Dynamisch machen
+            let targetLang = "en"; //TODO - Dynamisch machen
+            if(inp_lang_short_code.value !== '') {
+                targetLang = inp_lang_short_code.value;
+            }
             const sourceText = inp_word_own.value;
 
             fetchTranslation(sourceLang, targetLang, sourceText)
