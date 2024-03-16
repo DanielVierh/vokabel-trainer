@@ -142,7 +142,7 @@ function create_new_languge_pack() {
     }
 
     if (language_already_exists === false && languageName !== null && languageName.length > 4) {
-        const newLang = new LanguagePack(functions.create_Id(), languageName)
+        const newLang = new LanguagePack(create_Id(), languageName)
         console.log('newLang', newLang);
         add_Language_to_SaveObj(newLang);
         window.location.reload();
