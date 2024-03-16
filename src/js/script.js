@@ -61,9 +61,7 @@ class LanguagePack {
 }
 
 class Modal {
-
     static modal_list = [modal_language_menu, modal_new_words, modal_words];
-
     static open_modal(modal) {
         this.close_all_modals();
         modal.classList.add('active');
@@ -115,6 +113,7 @@ function renderLanguages() {
             voc_Saveobject.currentId = this.id;
             save_Data_into_LocalStorage();
             setTimeout(() => {
+                console.log('Yes');
                 Modal.open_modal(modal_language_menu);
             }, 200);
         };
