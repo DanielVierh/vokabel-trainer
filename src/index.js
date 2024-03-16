@@ -1,5 +1,2 @@
 import "./js/script.js"
-import "./js/home.js"
-import "./js/languageMenu.js"
-import "./js/cards.js"
 import "./scss/style.scss"
