@@ -1,0 +1,9 @@
+.modal {
+
+    transform: translateY(200%);
+    
+
+    &.active {
+        transform: translateY(0);
+    }
+}
