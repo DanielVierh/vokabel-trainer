@@ -115,6 +115,7 @@ function renderLanguages() {
             setTimeout(() => {
                 console.log('Yes');
                 Modal.open_modal(modal_language_menu);
+                lngLabel.innerHTML = this.innerHTML;
             }, 200);
         };
         langContainer.appendChild(languageButton);
